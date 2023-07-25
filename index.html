@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GitHub Comment Classifier</title>
+  <!-- Vue.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+  <!-- axios CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>GitHub Comment Classifier</h1>
+    <div v-if="loading">Loading...</div>
+    <div v-else>
+      <h2>Comments:</h2>
+      <div v-for="(comment, index) in comments" :key="index">
+        <p>{{ comment.text }}</p>
+        <p>Category: {{ comment.category }}</p>
+      </div>
+      <h2>Classification Summary:</h2>
+      <p>Good Comments: {{ goodCount }}</p>
+      <p>Bad Comments: {{ badCount }}</p>
+      <p>Neutral Comments: {{ neutralCount }}</p>
+    </div>
+  </div>
+  <script src="./main.js"></script>
+</body>
+</html>
